@@ -145,7 +145,13 @@ body {
     justify-content: center;
     height: 85vh;
     text-align: center;
+    background-image: url(https://github.com/MihoFukushi/portfolio/assets/145218422/7296e793-df85-4f68-8f82-b3b616ababd5);
+    background-color:rgba(255,255,255,0.2);
+    background-blend-mode:lighten;
+    background-size: 90%, 100%;
+    background-position: center bottom -75px;
   }
+
   
   .mv-container {
     padding: 0 40px;
@@ -182,7 +188,7 @@ body {
   
   .works-item {
     width: 31.74603%;
-    margin-right: 3.58730%;
+    margin-right: 1.58730%;
     margin-bottom: 40px;
     color: #333;
   }
@@ -370,7 +376,7 @@ body {
   .article-body h4 {
     position: relative;
     font-size: 16px;
-    margin-top:auto
+    margin-top:auto;
     margin-bottom: 5px;
     padding-left: 1em;
     line-height: 0.5;
