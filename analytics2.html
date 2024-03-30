@@ -1,33 +1,207 @@
-Case
-Rivervale has experienced unprecedented growth in recent years,
-attracting a surge of residents seeking a harmonious blend of urban convenience and natural beauty.
-Real estate professionals, policymakers, and enthusiasts are eager to understand the factors
-influencing property values in this unique city.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta property='og:type' content='website'>
+  <meta property='og:title' content='Miho Fukushi Portfolio'>
+  <meta property='og:url' content='URLが入る'>
+  <meta property='og:description' content='Miho Fukushi Portfolio'>
+  <meta property="og:image" content="img/ogp.png">
+  <meta name="description" content="Miho Fukushi Portfolio" />
+  <title>Miho Fukushi Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="css\ress.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="css\style.css" media="all" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel=”canonical” href=”URLが入る” />
+</head>
 
-Objective
-To unravel patterns, correlations, and insights that will shape the city's housing landscape by exploring data.
+<body>
+  <div class="wrapper">
 
-Data
-1. price: The price of the property in Rivervale.
-2. area: The area or size of the property.
-3. lakefront: A binary variable indicating whether the property is located on the lakefront.
-4. bedrooms: The number of bedrooms in the property.
-5. bathrooms: The number of bathrooms in the property.
-6. stories: The number of stories or levels in the property.
-7. mainroad: A binary variable indicating whether the property is accessible from the main road.
-8. guestroom: A binary variable indicating whether the property has a guest room.
-9. basement: A binary variable indicating whether the property has a basement.
-10. hotwaterheating: A binary variable indicating whether the property has hot water heating.
-11. airconditioning: A binary variable indicating whether the property has air conditioning.
-12. parking: The availability of parking spaces for the property.
-13. prefarea: A binary variable indicating whether the property is in a preferred area.
-14. furnishingstatus: The furnishing status of the property.
+    <!-- header -->
+    <header class="header ">
+      <div class="container">
+        <h1 class="header-logo">
+          <a href=".">MIHO FUKUSHI</a>
+        </h1>
+        <nav class="gnav">
+          <ul class="gnav-list">
+            <li class="gnav-item"><a href="index.html#ABOUT">ABOUT</a></li>
+            <li class="gnav-item"><a href="index.html#works">WORKS</a></li>
+            <li class="gnav-item"><a href="index.html#skill">SKILL</a></li>
+            <li class="gnav-item"><a href="index.html#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- /header -->
 
-Exploratory Analysis
-Check correlation for numerical variables
-<image>
+    <main class="content">
 
-Categorical variables
+      <article class="article">
+        <div class="article-container">
+          <h2 class="article-title">Rivervale Housing Price Analysis
+          </h2>
+          <div class="article-body">
+            <p>
+            </p>
+            <h3>INTRODUCTION</h3>
+            <p>Rivervale has experienced unprecedented growth in recent years,
+                attracting a surge of residents seeking a harmonious blend of urban convenience and natural beauty.
+                Real estate professionals, policymakers, and enthusiasts are eager to understand the factors
+                influencing property values in this unique city.</p>
+            <h3>OBJECTIVE</h3>
+            <p> To unravel patterns, correlations, and insights that will shape the city's housing landscape by exploring data.
+            </p>
+            <h3>DATA</h3>
+            <p><style>table {
+              width: 100%;
+              border-collapse: collapse;
+            }
+            
+            table, th, td {
+              border: 1px solid black;
+              padding: 8px;
+            }
+            
+            th {
+              background-color: #f2f2f2;
+            }
+            </style>
+                                                <table border="1">
+                                                    <thead>
+                                                      <tr>
+                                                        <th>No.</th>
+                                                        <th>Attribute</th>
+                                                        <th>Description</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr>
+                                                        <td>1</td>
+                                                        <td>price</td>
+                                                        <td>The price of the property in Rivervale.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>2</td>
+                                                        <td>area</td>
+                                                        <td>The area or size of the property.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>3</td>
+                                                        <td>lakefront</td>
+                                                        <td>A binary variable indicating whether the property is located on the lakefront.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>4</td>
+                                                        <td>bedrooms</td>
+                                                        <td>The number of bedrooms in the property.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>5</td>
+                                                        <td>bathrooms</td>
+                                                        <td>The number of bathrooms in the property.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>6</td>
+                                                        <td>stories</td>
+                                                        <td>The number of stories or levels in the property.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>7</td>
+                                                        <td>mainroad</td>
+                                                        <td>A binary variable indicating whether the property is accessible from the main road.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>8</td>
+                                                        <td>guestroom</td>
+                                                        <td>A binary variable indicating whether the property has a guest room.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>9</td>
+                                                        <td>basement</td>
+                                                        <td>A binary variable indicating whether the property has a basement.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>10</td>
+                                                        <td>hotwaterheating</td>
+                                                        <td>A binary variable indicating whether the property has hot water heating.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>11</td>
+                                                        <td>airconditioning</td>
+                                                        <td>A binary variable indicating whether the property has air conditioning.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>12</td>
+                                                        <td>parking</td>
+                                                        <td>The availability of parking spaces for the property.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>13</td>
+                                                        <td>prefarea</td>
+                                                        <td>A binary variable indicating whether the property is in a preferred area.</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>14</td>
+                                                        <td>furnishingstatus</td>
+                                                        <td>The furnishing status of the property.</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+          </p>
+            <h3>Exploratory Analysis</h3>
+            <p>                        <h4>Numerical Variables</h4>
+            For numerical variables, checked correlations to understand the relationship between 'price', the target variable, and the other numerical variables.
 
 
-'Area' should be a good variable to predict the price
+            <img src="https://github.com/MihoFukushi/portfolio/assets/145218422/f98999ea-191d-48a9-8588-aa79955b3bdd" alt="" width="350" height="450">
+
+                All of the numerical variables have a positive correlation with price, with significant p-values.
+                'area' and 'bathrooms' especially have a strong one.
+                It indicates that the larger area the house has / the more bathrooms the house has, the higher the price becomes, and the impacts are bigger than the other numerical variables.
+
+                <image>
+                    <h4>Categorical Variables</h4>
+                    For categorical variables, after checking homogeneity of variance by Levene's Test, conducted a proper test for each type :
+                    T-test for binary variables, 
+                
+    </p>
+            <h3>デザインについて</h3>
+            <p>
+              テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。<br>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+            </p>
+            <p>
+              テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+            </p>
+            <h3>コーディングについて</h3>
+            <p>
+              テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。
+            </p>
+          </div>
+          <div class="home-link">
+            <a href="index.html#works">Back to Works</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="page-top" id="js-page-top">
+        <span class="material-icons-outlined">expand_less</span>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="copyright">&copy;MIHO FUKUSHI</div>
+    </footer>
+    <!-- /footer -->
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type='text/javascript' src="js\script.js"></script>
+</body>
+</html>
