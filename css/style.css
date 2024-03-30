@@ -147,7 +147,7 @@ body {
     text-align: center;
     background-image: url(https://github.com/MihoFukushi/portfolio/assets/145218422/7296e793-df85-4f68-8f82-b3b616ababd5);
     background-color:rgba(255,255,255,0.2);
-    background-blend-mode:lighten;
+  background-blend-mode:lighten;
     background-size: 90%, 100%;
     background-position: center bottom -75px;
   }
@@ -163,6 +163,7 @@ body {
     line-height: 1.2;
     margin-bottom: 5px;
     letter-spacing: .1em;
+    color: #ffffff;
   }
   .mv-subtitle {
     font-size: 20px;
@@ -175,6 +176,7 @@ body {
   .mv-text {
     font-size: 16px;
     line-height: 1.8;
+    color: #ffffff;
   }
   
   /*--------------------------------
