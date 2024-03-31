@@ -15,11 +15,33 @@
   <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
   <link href="css\ress.css" media="all" rel="stylesheet" type="text/css" />
   <link href="css\style.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="css\prettify.css" media="all" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel=”canonical” href=”URLが入る” />
+  <script type="text/javascript" src="js\prettify.js"></script>
+  <!-- <script type="text/javascript" src="js\lang-r.js"></script> -->
+  <body onload="prettyPrint()">
 </head>
 
 <body>
+  <style>table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  img {
+display: block;
+margin: 0 auto;
+}
+  </style>
   <div class="wrapper">
 
     <!-- header -->
@@ -57,113 +79,216 @@
             <h3>OBJECTIVE</h3>
             <p> To unravel patterns, correlations, and insights that will shape the city's housing landscape by exploring data.
             </p>
-            <h3>DATA</h3>
-            <p><style>table {
-              width: 100%;
-              border-collapse: collapse;
-            }
-            
-            table, th, td {
-              border: 1px solid black;
-              padding: 8px;
-            }
-            
-            th {
-              background-color: #f2f2f2;
-            }
-            </style>
+            <h3>DATASET</h3>
+            <p>
                                                 <table border="1">
                                                     <thead>
                                                       <tr>
-                                                        <th>No.</th>
                                                         <th>Attribute</th>
                                                         <th>Description</th>
                                                       </tr>
                                                     </thead>
                                                     <tbody>
                                                       <tr>
-                                                        <td>1</td>
                                                         <td>price</td>
                                                         <td>The price of the property in Rivervale.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>2</td>
                                                         <td>area</td>
                                                         <td>The area or size of the property.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>3</td>
                                                         <td>lakefront</td>
                                                         <td>A binary variable indicating whether the property is located on the lakefront.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>4</td>
                                                         <td>bedrooms</td>
                                                         <td>The number of bedrooms in the property.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>5</td>
                                                         <td>bathrooms</td>
                                                         <td>The number of bathrooms in the property.</td>
                                                       </tr>
-                                                      <tr>
-                                                        <td>6</td>
+          <tr>
                                                         <td>stories</td>
                                                         <td>The number of stories or levels in the property.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>7</td>
                                                         <td>mainroad</td>
                                                         <td>A binary variable indicating whether the property is accessible from the main road.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>8</td>
                                                         <td>guestroom</td>
                                                         <td>A binary variable indicating whether the property has a guest room.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>9</td>
                                                         <td>basement</td>
                                                         <td>A binary variable indicating whether the property has a basement.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>10</td>
                                                         <td>hotwaterheating</td>
                                                         <td>A binary variable indicating whether the property has hot water heating.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>11</td>
                                                         <td>airconditioning</td>
                                                         <td>A binary variable indicating whether the property has air conditioning.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>12</td>
                                                         <td>parking</td>
                                                         <td>The availability of parking spaces for the property.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>13</td>
                                                         <td>prefarea</td>
                                                         <td>A binary variable indicating whether the property is in a preferred area.</td>
                                                       </tr>
                                                       <tr>
-                                                        <td>14</td>
                                                         <td>furnishingstatus</td>
                                                         <td>The furnishing status of the property.</td>
                                                       </tr>
                                                     </tbody>
                                                   </table>
           </p>
-            <h3>Exploratory Analysis</h3>
-            <p>                        <h4>Numerical Variables</h4>
-            For numerical variables, checked correlations to understand the relationship between 'price', the target variable, and the other numerical variables.
+            <h3>DATA PREPARATION</h3>
+<p>Loaded data and check summary.</p>
+            
+            <code><pre class="codebox"> > summary(df)</pre></code>
+
+            <code><pre class="codebox">
+          price               area       lakefront     bedrooms       bathrooms       stories      mainroad  guestroom basement  hotwaterheating airconditioning
+    Min.   : 1646000   Min.   : 1650   no  :303   Min.   :1.000   Min.   :1.00   Min.   :1.000   no : 77   no :464   no :370   no :539         no :376        
+    1st Qu.: 3287700   1st Qu.: 3630   yes : 74   1st Qu.:3.000   1st Qu.:1.00   1st Qu.:1.000   yes:487   yes:100   yes:194   yes: 25         yes:188        
+    Median : 4142150   Median : 4800   NA's:187   Median :3.000   Median :1.00   Median :2.000                                                                
+    Mean   : 4621384   Mean   : 5244              Mean   :2.982   Mean   :1.31   Mean   :1.837                                                                
+    3rd Qu.: 5631075   3rd Qu.: 6442              3rd Qu.:3.000   3rd Qu.:2.00   3rd Qu.:2.000                                                                
+    Max.   :12250900   Max.   :16200              Max.   :6.000   Max.   :4.00   Max.   :4.000                                                                
+                        NA's   :44                                                                                                                             
+        parking       prefarea        furnishingstatus
+    Min.   :0.0000   no :433   furnished     :152    
+    1st Qu.:0.0000   yes:131   semi-furnished:229    
+    Median :0.0000             unfurnished   :183    
+    Mean   :0.7163                                   
+    3rd Qu.:1.0000                                   
+    Max.   :3.0000                                   
+                  </pre></code>
+            <h4>Handling Duplicates</h4>
+            <p>Checked if there is any duplicated observations by using all columns as the key, since there is no specific key variable in the dataset.</p>
+
+              <code><pre class="codebox"> > df[duplicated(df) | duplicated(df, fromLast = T),]</pre></code>
+
+              <code><pre class="codebox">
+    price area lakefront bedrooms bathrooms stories mainroad guestroom basement hotwaterheating airconditioning parking prefarea furnishingstatus
+    4   11516000 8960        no        4         4       4      yes        no       no              no             yes       3       no        furnished
+    5   11516000 8960        no        4         4       4      yes        no       no              no             yes       3       no        furnished
+    6   11516000 8960        no        4         4       4      yes        no       no              no             yes       3       no        furnished
+    7   11516000 8960        no        4         4       4      yes        no       no              no             yes       3       no        furnished
+    8   11516000 8960        no        4         4       4      yes        no       no              no             yes       3       no        furnished
+    38   7645000 6000      &lt;NA&gt;        3         1       4      yes       yes       no              no             yes       2       no      unfurnished
+    39   7645000 6000      &lt;NA&gt;        3         1       4      yes       yes       no              no             yes       2       no      unfurnished
+    65   6804900 6000       yes        4         2       4      yes        no       no              no             yes       1       no        furnished
+    66   6804900 6000       yes        4         2       4      yes        no       no              no             yes       1       no        furnished
+    67   6804900 6000       yes        4         2       4      yes        no       no              no             yes       1       no        furnished
+    68   6804900 6000       yes        4         2       4      yes        no       no              no             yes       1       no        furnished
+    69   6792300 6000        no        3         1       1      yes        no       no              no             yes       1       no        furnished
+    70   6792300 6000        no        3         1       1      yes        no       no              no             yes       1       no        furnished
+    71   6792300 6000        no        3         1       1      yes        no       no              no             yes       1       no        furnished
+    72   6792300 6000        no        3         1       1      yes        no       no              no             yes       1       no        furnished
+    117  5824200 6350      &lt;NA&gt;        3         2       3      yes       yes       no              no             yes       0       no        furnished
+    118  5808300 4800      &lt;NA&gt;        3         1       1      yes       yes      yes              no              no       0       no      unfurnished
+    119  5797000 6000        no        4         2       4      yes        no       no              no              no       1       no   semi-furnished
+    120  5794800 6600        no        3         2       1      yes        no      yes              no             yes       0      yes      unfurnished
+    121  5775900 6000        no        3         2       4      yes        no       no              no             yes       0       no      unfurnished
+    122  5824200 6350      &lt;NA&gt;        3         2       3      yes       yes       no              no             yes       0       no        furnished
+    123  5808300 4800      &lt;NA&gt;        3         1       1      yes       yes      yes              no              no       0       no      unfurnished
+    124  5797000 6000        no        4         2       4      yes        no       no              no              no       1       no   semi-furnished
+    125  5794800 6600        no        3         2       1      yes        no      yes              no             yes       0      yes      unfurnished
+    126  5775900 6000        no        3         2       4      yes        no       no              no             yes       0       no      unfurnished
+    194  4895400 7800      &lt;NA&gt;        3         1       1      yes        no      yes              no             yes       2      yes      unfurnished
+    195  4889800 7600      &lt;NA&gt;        4         1       2      yes        no       no              no             yes       2       no        furnished
+    196  4888700 7980      &lt;NA&gt;        3         1       1      yes        no       no              no              no       1      yes   semi-furnished
+    197  4895400 7800      &lt;NA&gt;        3         1       1      yes        no      yes              no             yes       2      yes      unfurnished
+    198  4889800 7600      &lt;NA&gt;        4         1       2      yes        no       no              no             yes       2       no        furnished
+    199  4888700 7980      &lt;NA&gt;        3         1       1      yes        no       no              no              no       1      yes   semi-furnished                  </pre></code>
+
+                  <p>Observing all duplicated values by using Top-Bottom & Bottom-Top scanning, all observations had all same values in their groups, thus I decided to drop duplicates in any way, leaving 1 record for each.
 
 
-            <img src="https://github.com/MihoFukushi/portfolio/assets/145218422/f98999ea-191d-48a9-8588-aa79955b3bdd" alt="" width="350" height="450">
 
-                All of the numerical variables have a positive correlation with price, with significant p-values.
+            </p>
+
+            <h4>Handling Missing Values</h4>
+<p>As checked in summary, there is 44 NA's in 'area' and 187 in 'lakefront'.<br>
+  Assuming 'area' is dependent on the other variables, 
+</p>
+
+
+            
+            <h3>VARIABLE ANALYSIS</h3>
+              <h4>Numerical Variables</h4>
+            <p>For numerical variables, conducted normality test at first.
+              <code><pre class="codebox"> > df_num <- df[c(1:2, 4:6, 12)]
+                > lapply(df_num, shapiro.test)</pre></code>
+
+              <code><pre class="codebox">
+    $price
+
+      Shapiro-Wilk normality test
+
+    data:  X[[i]]
+    W = 0.91324, p-value < 2.2e-16
+
+
+    $area
+
+      Shapiro-Wilk normality test
+
+    data:  X[[i]]
+    W = 0.92226, p-value = 9.719e-16
+
+
+    $bedrooms
+
+      Shapiro-Wilk normality test
+
+    data:  X[[i]]
+    W = 0.83122, p-value < 2.2e-16
+
+
+    $bathrooms
+
+      Shapiro-Wilk normality test
+
+    data:  X[[i]]
+    W = 0.58051, p-value < 2.2e-16
+
+
+    $stories
+
+      Shapiro-Wilk normality test
+
+    data:  X[[i]]
+    W = 0.77443, p-value < 2.2e-16
+
+
+    $parking
+
+      Shapiro-Wilk normality test
+
+    data:  X[[i]]
+    W = 0.75729, p-value < 2.2e-16
+
+                    </pre></code>
+<p>None of them is normally distributed.</p>
+<p>
+              Next, checked correlations to understand the relationship between 'price', the target variable, and the other numerical variables.
+              Based on the result of the normality test, applied Spearman's method.
+            </p>
+            <code><pre class="codebox"> > chart.Correlation(df_num, method = "spearman")            </pre></code>
+
+            <img src="https://github.com/MihoFukushi/portfolio/assets/145218422/f98999ea-191d-48a9-8588-aa79955b3bdd" alt="" width="550" height="650" display: block margin: 0 auto>
+
+                <p>All of the numerical variables have a positive correlation with price, with significant p-values.
                 'area' and 'bathrooms' especially have a strong one.
-                It indicates that the larger area the house has / the more bathrooms the house has, the higher the price becomes, and the impacts are bigger than the other numerical variables.
+                It indicates that the larger area the house has / the more bathrooms the house has, the higher the price becomes, and the impacts are bigger than the other numerical variables.</p>
 
                 <image>
                     <h4>Categorical Variables</h4>
